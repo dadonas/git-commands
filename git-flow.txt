@@ -1,5 +1,6 @@
 //Init Git Flow on Repository
 git flow init
+git push origin --all
 
 do {
     //Start Feature Development
@@ -9,7 +10,8 @@ do {
     git flow feature finish
  } while (hasNewFeatures())
 
- git push origin --all
+//It's a good practice to push to upstream the feature branch before its finish
+git push --set-upstream origin fetaure/feature-name 
 
 if (isHotfix()){
     //Start Hotfix Development
@@ -29,3 +31,5 @@ if (isAllFeaturesDone()){
     //Finish Release
     git flow release finish
 }
+
+git push orgin --all --follow-tags
