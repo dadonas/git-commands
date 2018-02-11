@@ -1,0 +1,29 @@
+//Init Git Flow on Repository
+git flow init
+
+do {
+    //Start Feature Development
+    git flow feature start feature-name
+
+    //Feature Finish
+    git flow feature finish
+ } while (hasNewFeatures())
+
+if (isHotfix()){
+    //Start Hotfix Development
+    git flow hotfix start 1.0.1
+
+    //Finish Hotfix
+    git flow hotfix finish
+}
+
+if (isAllFeaturesDone()){
+    //Start Release to integrate to master branch and create a tag
+    git flow release start 1.1
+
+    //Publish Realease - integrate develop to master
+    git flow release publish
+
+    //Finish Release
+    git flow release finish
+}
