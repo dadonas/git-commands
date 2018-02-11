@@ -6,17 +6,24 @@ do {
     //Start Feature Development
     git flow feature start feature-name
 
+    git add .
+    git commit
+
     //Feature Finish
     git flow feature finish
  } while (hasNewFeatures())
 
 //It's a good practice to push to upstream the feature branch before its finish
 //for example one time a day
+//feature-name = Jira Card ID for example
 git push --set-upstream origin fetaure/feature-name 
 
 if (isHotfix()){
     //Start Hotfix Development
     git flow hotfix start 1.0.1
+
+    git add .
+    git commit
 
     //Finish Hotfix
     git flow hotfix finish
@@ -26,11 +33,11 @@ if (isAllFeaturesDone()){
     //Start Release to integrate to master branch and create a tag
     git flow release start 1.1
 
-    //Publish Realease - integrate develop to master
-    git flow release publish
-
     //Finish Release
     git flow release finish
 }
 
 git push orgin --all --follow-tags
+
+//Reference
+//http://nvie.com/posts/a-successful-git-branching-model/
