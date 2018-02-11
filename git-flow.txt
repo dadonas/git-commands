@@ -11,6 +11,7 @@ do {
  } while (hasNewFeatures())
 
 //It's a good practice to push to upstream the feature branch before its finish
+//for example one time a day
 git push --set-upstream origin fetaure/feature-name 
 
 if (isHotfix()){
