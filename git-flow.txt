@@ -9,6 +9,8 @@ do {
     git flow feature finish
  } while (hasNewFeatures())
 
+ git push origin --all
+
 if (isHotfix()){
     //Start Hotfix Development
     git flow hotfix start 1.0.1
