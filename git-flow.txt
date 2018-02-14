@@ -10,7 +10,7 @@ do {
     git commit
 
     //Feature Finish
-    git flow feature finish
+    git flow feature finish feature-name
  } while (hasNewFeatures())
 
 //It's a good practice to push to upstream the feature branch before its finish
@@ -26,7 +26,7 @@ if (isHotfix()){
     git commit
 
     //Finish Hotfix
-    git flow hotfix finish
+    git flow hotfix finish 1.0.1
 }
 
 if (isAllFeaturesDone()){
@@ -34,7 +34,7 @@ if (isAllFeaturesDone()){
     git flow release start 1.1
 
     //Finish Release
-    git flow release finish
+    git flow release finish 1.1
 }
 
 git push orgin --all --follow-tags
